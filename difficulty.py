@@ -1,4 +1,5 @@
 from turtle import Turtle
+import time
 
 FONT = ("Courier", 12, "normal")
 
@@ -32,3 +33,6 @@ class Difficulty(Turtle):
     def set_difficulty(self):
         self.difficulty_set = True
         self.clear()
+
+    def empty_method(self):
+        pass

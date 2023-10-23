@@ -15,12 +15,18 @@ scoreboard = Scoreboard()
 difficulty = Difficulty()
 
 screen.listen()
-screen.onkey(player.move, "Up")
-if not difficulty.difficulty_set:
+while not difficulty.difficulty_set:
+    time.sleep(0.1)
+    screen.update()
     screen.onkey(difficulty.easy_difficulty, "1")
     screen.onkey(difficulty.medium_difficulty, "2")
     screen.onkey(difficulty.hard_difficulty, "3")
     screen.onkey(difficulty.manic_difficulty, "4")
+screen.onkeypress(player.move, "Up")
+screen.onkey(difficulty.empty_method, "1")
+screen.onkey(difficulty.empty_method, "2")
+screen.onkey(difficulty.empty_method, "3")
+screen.onkey(difficulty.empty_method, "4")
 
 game_is_on = True
 while game_is_on:
